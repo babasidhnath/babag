@@ -8,242 +8,122 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Gurajada&display=swap" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
   <link rel="icon" href="assets/img/om.svg">
+  <style>
+    :root{
+      --bhagwa1:#ff6a00;--bhagwa2:#ff8c00;--gold:#d9a441;--deep:#5a3a09;
+    }
+    body{font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto;}
+    .navbar-bhagwa{background:linear-gradient(90deg,var(--bhagwa1),var(--bhagwa2));}
+    .navbar-bhagwa .navbar-brand,.navbar-bhagwa .nav-link{color:#fff;}
+    .navbar-bhagwa .nav-link:hover{color:#000;}
+    .btn-bhagwa{background:linear-gradient(45deg,var(--bhagwa1),var(--bhagwa2));color:#fff;border:none;}
+    .btn-bhagwa:hover{filter:brightness(.95);color:#fff}
+    .btn-donation{background:#fff;color:#000;border-radius:999px;padding:.45rem 1rem}
+    .footer-gradient{background:radial-gradient(120% 120% at 100% 0,#6b3808 0,#2b1c05 60%,#1b1204 100%);}
+    #mantra-ticker{background:linear-gradient(90deg,var(--deep),#7a470d);border-bottom:1px solid rgba(255,255,255,.15)}
+    .mantra-box{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:.75rem;border-radius:10px;min-height:60px}
+    .mantra-big{font-size:1.25rem}
+    .hero-section{position:relative;height:72vh;background:url('assets/img/hero-temple.jpg') center/cover no-repeat;}
+    .hero-section .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.55));}
+    .mantra-chip{background:#fff;color:#111;border-radius:999px;padding:.5rem 1rem;display:inline-block;box-shadow:0 10px 20px rgba(0,0,0,.12)}
+    .section-pad{padding:64px 0}
+    .feature-card .card-title{color:#000}
+    .god-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.06);transition:transform .2s ease,box-shadow .2s ease}
+    .god-card:hover{transform:translateY(-4px);box-shadow:0 12px 34px rgba(0,0,0,.12)}
+    .god-img{width:100%;height:180px;object-fit:cover}
+    .bg-bhagwa{background:linear-gradient(45deg,var(--bhagwa1),var(--bhagwa2))!important}
+    .temple-decorations{position:fixed;top:15px;right:20px;z-index:1050;display:flex;flex-direction:column;align-items:center;gap:10px;}
+    .temple-bell{width:42px;animation:swing 2s infinite ease-in-out;transform-origin:top center;filter:drop-shadow(0 2px 4px rgba(0,0,0,.4));}
+    @keyframes swing{0%{transform:rotate(0deg);}25%{transform:rotate(10deg);}50%{transform:rotate(0deg);}75%{transform:rotate(-10deg);}100%{transform:rotate(0deg);}}
+    .temple-flag{width:50px;animation:wave 3s infinite ease-in-out;transform-origin:left center;}
+    @keyframes wave{0%{transform:rotate(0deg) translateX(0);}50%{transform:rotate(3deg) translateX(2px);}100%{transform:rotate(0deg) translateX(0);}}
+  </style>
 </head>
+
 <body>
-
-  <!-- ✅ Temple Bell Audio & Decorations (correct place) -->
-  <audio id="templeBell" src="assets/audio/temple-bell.mp3" preload="auto"></audio>
-  <div class="temple-decorations">
-    <img src="assets/img/bell.png" alt="Bell" class="temple-bell">
-    <img src="assets/img/flag.png" alt="Flag" class="temple-flag">
-  </div>
-
   <!-- Top Mantra Ticker -->
   <div id="mantra-ticker" class="text-center small text-light py-1"></div>
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg sticky-top shadow-sm navbar-bhagwa">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
         <img src="assets/img/om.svg" width="28" height="28" alt="ॐ">
         <span class="fw-bold">बाबा सिद्धनाथ झरिना आश्रम</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
-        <span class="navbar-toggler-icon"></span>
-      </button>
       <div class="collapse navbar-collapse" id="navMain">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="gods.html">Gods</a></li>
-          <li class="nav-item"><a class="nav-link" href="branches.html">Branches</a></li>
-          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
-          <li class="nav-item"><a class="nav-link" href="downloads.html">Granth</a></li>
-          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="btn btn-donation ms-lg-3" href="donation.html">Seva/Donation</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Branches</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- Hero -->
-  <header class="hero-section">
+  <header class="hero-section text-light text-center d-flex align-items-center justify-content-center flex-column">
     <div class="overlay"></div>
-    <div class="container h-100 d-flex flex-column justify-content-center align-items-center text-center text-light">
-      <h1 class="display-5 fw-bold" data-aos="fade-up">जय श्री बाबा सिद्धनाथ जी</h1>
-      <p class="lead" data-aos="fade-up" data-aos-delay="150">झरिना आश्रम • शांति, सेवा और साधना</p>
-      <div class="d-flex gap-3 mt-3" data-aos="fade-up" data-aos-delay="250">
-        <a href="gods.html" class="btn btn-light">Gods Section</a>
-        <a href="branches.html" class="btn btn-outline-light">View Branches</a>
-      </div>
-      <div class="mantra-chip mt-4" id="hero-mantra" data-aos="zoom-in" data-aos-delay="350"></div>
-    </div>
+    <h1 class="display-5 fw-bold" data-aos="fade-up">जय श्री बाबा सिद्धनाथ जी</h1>
+    <p class="lead" data-aos="fade-up" data-aos-delay="150">झरिना आश्रम • शांति, सेवा और साधना</p>
+    <div class="mantra-chip mt-3" id="hero-mantra"></div>
   </header>
 
-  <!-- Three Highlights -->
-  <section class="py-5">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-md-4" data-aos="fade-up">
-          <div class="card h-100 shadow-sm feature-card">
-            <div class="card-body">
-              <h5 class="card-title">Mandir Profile</h5>
-              <p class="card-text">आश्रम का इतिहास, गुरुजी का संदेश और ट्रस्ट विवरण।</p>
-              <a href="about.html" class="stretched-link">और पढ़ें</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="card h-100 shadow-sm feature-card">
-            <div class="card-body">
-              <h5 class="card-title">Daily Mantra</h5>
-              <p class="card-text">हर दिन अलग मंत्र — होम, फुटर, और पॉपअप में ऑटो दिखेगा।</p>
-              <a href="#!" class="stretched-link" data-bs-toggle="modal" data-bs-target="#mantraModal">आज का मंत्र देखें</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="card h-100 shadow-sm feature-card">
-            <div class="card-body">
-              <h5 class="card-title">Branches</h5>
-              <p class="card-text">हमारी शाखाएं — स्थान, समय, और संपर्क जानकारी।</p>
-              <a href="branches.html" class="stretched-link">शाखाएँ देखें</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gods Preview -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <h3 class="m-0">Gods Section</h3>
-        <a class="btn btn-bhagwa" href="gods.html">सब देखें</a>
-      </div>
-      <div class="row g-4">
-        <div class="col-md-3" data-aos="fade-up">
-          <div class="god-card">
-            <img class="god-img" src="assets/img/god-shiva.jpg" alt="भगवान शिव">
-            <div class="p-3">
-              <h6 class="mb-1">भगवान शिव</h6>
-              <small>ॐ नमः शिवाय</small>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
-          <div class="god-card">
-            <img class="god-img" src="assets/img/god-hanuman.jpg" alt="हनुमान जी">
-            <div class="p-3">
-              <h6 class="mb-1">हनुमान जी</h6>
-              <small>ॐ श्री हनुमते नमः</small>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
-          <div class="god-card">
-            <img class="god-img" src="assets/img/god-durga.jpg" alt="माँ दुर्गा">
-            <div class="p-3">
-              <h6 class="mb-1">माँ दुर्गा</h6>
-              <small>या देवी सर्वभूतेषु</small>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
-          <div class="god-card">
-            <img class="god-img" src="assets/img/god-krishna.jpg" alt="श्री कृष्ण">
-            <div class="p-3">
-              <h6 class="mb-1">श्री कृष्ण</h6>
-              <small>हरे कृष्ण हरे राम</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- CTA -->
-  <section class="py-5">
-    <div class="container text-center" data-aos="fade-up">
+  <section class="py-5 text-center">
+    <div class="container">
       <h3>सेवा/दान से जुड़े</h3>
-      <p class="text-muted mb-3">आपकी छोटी सी सेवा भी बड़े बदलाव ला सकती है।</p>
-      <a href="donation.html" class="btn btn-bhagwa">Donate Now</a>
+      <p class="text-muted">आपकी छोटी सी सेवा भी बड़े बदलाव ला सकती है।</p>
+      <a href="#" class="btn btn-bhagwa">Donate Now</a>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer-gradient text-light mt-5">
-    <div class="container py-5">
-      <div class="row g-4">
-        <div class="col-md-4">
-          <h5 class="mb-3">आश्रम</h5>
-          <p>जय श्री बाबा सिद्धनाथ जी झरिना आश्रम — श्रद्धालुओं के लिए एक आध्यात्मिक केन्द्र।</p>
-          <div class="d-flex gap-2">
-            <a class="btn btn-sm btn-outline-light" href="downloads.html">धर्म ग्रंथ</a>
-            <a class="btn btn-sm btn-outline-light" href="events.html">आयोजन</a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <h5 class="mb-3">संपर्क</h5>
-          <p class="mb-1">झरिना, हरदोई, उत्तर प्रदेश</p>
-          <p class="mb-1">Email: info@sidhnathashram.org</p>
-          <p class="mb-0">WhatsApp: +91-90000-00000</p>
-        </div>
-        <div class="col-md-4">
-          <h5 class="mb-3">आज का मंत्र</h5>
-          <div id="footer-mantra" class="mantra-box"></div>
-        </div>
-      </div>
-      <hr class="border-light opacity-25 my-4">
-      <div class="d-flex justify-content-between small">
-        <span>© <span id="year"></span> Sidhnath Ashram. All Rights Reserved.</span>
-        <span>Made with श्रद्धा • जय श्री महादेव</span>
-      </div>
-    </div>
+  <footer class="footer-gradient text-light text-center py-4">
+    <div id="footer-mantra" class="mantra-box mx-auto" style="max-width:320px"></div>
+    <div class="mt-3 small">© <span id="year"></span> Sidhnath Ashram. All Rights Reserved.</div>
   </footer>
 
-  <!-- Daily Mantra Modal -->
-  <div class="modal fade" id="mantraModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header bg-bhagwa text-light">
-          <h5 class="modal-title">🔔 आज का मंत्र</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div id="modal-mantra" class="mantra-big text-center"></div>
-        </div>
-      </div>
-    </div>
+  <!-- Audio + Animations -->
+  <audio id="templeBell" src="assets/audio/temple-bell.mp3" preload="auto"></audio>
+  <div class="temple-decorations">
+    <img src="assets/img/bell.png" alt="Bell" class="temple-bell">
+    <img src="assets/img/flag.png" alt="Flag" class="temple-flag">
   </div>
 
-  <!-- JS Files -->
- <script>
-AOS.init({ once: true });
-document.getElementById('year').textContent = new Date().getFullYear();
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-// Daily mantra system
-const mantras = {
-  0: { text: "ॐ नमो भगवते वासुदेवाय", deity: "श्री विष्णु", place: "मुख्य मंडप" },
-  1: { text: "ॐ नमः शिवाय", deity: "भगवान शिव", place: "गर्भगृह" },
-  2: { text: "ॐ श्री हनुमते नमः", deity: "हनुमान जी", place: "हनुमान मंदिर" },
-  3: { text: "ॐ नमो नारायणाय", deity: "श्री हरि", place: "उत्तर द्वार" },
-  4: { text: "ॐ दुं दुर्गायै नमः", deity: "माँ दुर्गा", place: "देवी प्रांगण" },
-  5: { text: "ॐ श्रीं ह्रीं क्लीं", deity: "महालक्ष्मी", place: "धन्य कक्ष" },
-  6: { text: "ॐ नमो भगवते रुद्राय", deity: "महादेव", place: "यज्ञ वेदी" }
-};
+  <script>
+    AOS.init({ once:true });
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-const d = new Date();
-const m = mantras[d.getDay()];
+    const mantras = {
+      0:{text:"ॐ नमो भगवते वासुदेवाय",deity:"श्री विष्णु",place:"मुख्य मंडप"},
+      1:{text:"ॐ नमः शिवाय",deity:"भगवान शिव",place:"गर्भगृह"},
+      2:{text:"ॐ श्री हनुमते नमः",deity:"हनुमान जी",place:"हनुमान मंदिर"},
+      3:{text:"ॐ नमो नारायणाय",deity:"श्री हरि",place:"उत्तर द्वार"},
+      4:{text:"ॐ दुं दुर्गायै नमः",deity:"माँ दुर्गा",place:"देवी प्रांगण"},
+      5:{text:"ॐ श्रीं ह्रीं क्लीं",deity:"महालक्ष्मी",place:"धन्य कक्ष"},
+      6:{text:"ॐ नमो भगवते रुद्राय",deity:"महादेव",place:"यज्ञ वेदी"}
+    };
+    const d=new Date(),m=mantras[d.getDay()];
+    function setMantra(){
+      const t=document.getElementById("mantra-ticker"),h=document.getElementById("hero-mantra"),f=document.getElementById("footer-mantra");
+      if(t)t.innerHTML=`🔔 आज का मंत्र: <strong>${m.text}</strong> • देवता: ${m.deity} • स्थान: ${m.place}`;
+      if(h)h.innerHTML=`आज का मंत्र: <strong>${m.text}</strong>`;
+      if(f)f.innerHTML=`<div><div class='fw-semibold mb-1'>${m.text}</div><div class='small opacity-75'>देवता: ${m.deity} • स्थान: ${m.place}</div></div>`;
+    }
+    setMantra();
 
-function setMantra() {
-  const ticker = document.getElementById('mantra-ticker');
-  const hero = document.getElementById('hero-mantra');
-  const foot = document.getElementById('footer-mantra');
-  const modal = document.getElementById('modal-mantra');
-  if (ticker) ticker.innerHTML = `🔔 आज का मंत्र: <strong>${m.text}</strong> • देवता: ${m.deity} • स्थान: ${m.place}`;
-  if (hero) hero.innerHTML = `आज का मंत्र: <strong>${m.text}</strong>`;
-  if (foot) foot.innerHTML = `<div><div class="fw-semibold mb-1">${m.text}</div><div class="small opacity-75">देवता: ${m.deity} • स्थान: ${m.place}</div></div>`;
-  if (modal) modal.innerHTML = `<div class="display-6">${m.text}</div><div class="mt-2 text-muted">देवता: ${m.deity} • स्थान: ${m.place}</div>`;
-}
-setMantra();
-
-// Temple bell auto play
-window.addEventListener("DOMContentLoaded", () => {
-  const audio = document.getElementById("templeBell");
-  if (!audio) return;
-  const tryPlay = () => {
-    audio.volume = 0.6;
-    audio.play().catch(() => {
-      document.body.addEventListener("click", () => audio.play(), { once: true });
+    // Temple bell sound auto play
+    window.addEventListener("DOMContentLoaded",()=>{
+      const audio=document.getElementById("templeBell");
+      if(!audio)return;
+      const tryPlay=()=>{audio.volume=0.6;audio.play().catch(()=>{document.body.addEventListener("click",()=>audio.play(),{once:true});});};
+      setTimeout(tryPlay,1500);
     });
-  };
-  setTimeout(tryPlay, 1500);
-});
-</script>
+  </script>
 </body>
 </html>
