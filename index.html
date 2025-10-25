@@ -202,8 +202,48 @@
   </div>
 
   <!-- JS Files -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="assets/js/app.js"></script>
+ <script>
+AOS.init({ once: true });
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Daily mantra system
+const mantras = {
+  0: { text: "ॐ नमो भगवते वासुदेवाय", deity: "श्री विष्णु", place: "मुख्य मंडप" },
+  1: { text: "ॐ नमः शिवाय", deity: "भगवान शिव", place: "गर्भगृह" },
+  2: { text: "ॐ श्री हनुमते नमः", deity: "हनुमान जी", place: "हनुमान मंदिर" },
+  3: { text: "ॐ नमो नारायणाय", deity: "श्री हरि", place: "उत्तर द्वार" },
+  4: { text: "ॐ दुं दुर्गायै नमः", deity: "माँ दुर्गा", place: "देवी प्रांगण" },
+  5: { text: "ॐ श्रीं ह्रीं क्लीं", deity: "महालक्ष्मी", place: "धन्य कक्ष" },
+  6: { text: "ॐ नमो भगवते रुद्राय", deity: "महादेव", place: "यज्ञ वेदी" }
+};
+
+const d = new Date();
+const m = mantras[d.getDay()];
+
+function setMantra() {
+  const ticker = document.getElementById('mantra-ticker');
+  const hero = document.getElementById('hero-mantra');
+  const foot = document.getElementById('footer-mantra');
+  const modal = document.getElementById('modal-mantra');
+  if (ticker) ticker.innerHTML = `🔔 आज का मंत्र: <strong>${m.text}</strong> • देवता: ${m.deity} • स्थान: ${m.place}`;
+  if (hero) hero.innerHTML = `आज का मंत्र: <strong>${m.text}</strong>`;
+  if (foot) foot.innerHTML = `<div><div class="fw-semibold mb-1">${m.text}</div><div class="small opacity-75">देवता: ${m.deity} • स्थान: ${m.place}</div></div>`;
+  if (modal) modal.innerHTML = `<div class="display-6">${m.text}</div><div class="mt-2 text-muted">देवता: ${m.deity} • स्थान: ${m.place}</div>`;
+}
+setMantra();
+
+// Temple bell auto play
+window.addEventListener("DOMContentLoaded", () => {
+  const audio = document.getElementById("templeBell");
+  if (!audio) return;
+  const tryPlay = () => {
+    audio.volume = 0.6;
+    audio.play().catch(() => {
+      document.body.addEventListener("click", () => audio.play(), { once: true });
+    });
+  };
+  setTimeout(tryPlay, 1500);
+});
+</script>
 </body>
 </html>
