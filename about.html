@@ -3,59 +3,48 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>जय श्री बाबा सिद्धनाथ जी झरिना आश्रम | आधिकारिक मंदिर वेबसाइट</title>
-  <meta name="description" content="आधिकारिक मंदिर वेबसाइट — आरती समय, दैनिक मंत्र, शाखाएँ, फोटो गैलरी, आयोजन, दान एवं संपर्क।">
+  <title>About | बाबा सिद्धनाथ झरिना आश्रम</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Gurajada&display=swap" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
   <link rel="icon" href="assets/img/om.svg">
+  <style>
+    :root{--bhagwa1:#ff6a00;--bhagwa2:#ff8c00;}
+    body{font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto;}
+    .navbar-bhagwa{background:linear-gradient(90deg,var(--bhagwa1),var(--bhagwa2));}
+    .navbar-bhagwa .nav-link,.navbar-bhagwa .navbar-brand{color:#fff}
+    .btn-bhagwa{background:linear-gradient(45deg,var(--bhagwa1),var(--bhagwa2));color:#fff;border:none}
+    .footer{background:#1b1204;color:#fff}
+  </style>
 </head>
 <body>
-  <!-- Top Mantra Ticker -->
-  <div id="mantra-ticker" class="text-center small text-light py-1"></div>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg sticky-top shadow-sm navbar-bhagwa">
+  <nav class="navbar navbar-expand-lg navbar-bhagwa shadow-sm">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-        <img src="assets/img/om.svg" width="28" height="28" alt="ॐ">
-        <span class="fw-bold">बाबा सिद्धनाथ झरिना आश्रम</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navMain">
+      <a class="navbar-brand" href="index.html">बाबा सिद्धनाथ झरिना आश्रम</a>
+      <div class="collapse navbar-collapse show">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="gods.html">Gods</a></li>
           <li class="nav-item"><a class="nav-link" href="branches.html">Branches</a></li>
-          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
-          <li class="nav-item"><a class="nav-link" href="downloads.html">Granth</a></li>
-          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="btn btn-donation ms-lg-3" href="donation.html">Seva/Donation</a></li>
+          <li class="nav-item"><a class="nav-link" href="donation.html">Donation</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <section class="section-pad">
+  <main class="py-5">
     <div class="container">
       <h2 class="mb-3">मंदिर प्रोफ़ाइल</h2>
       <p>झरिना आश्रम का इतिहास, स्थापना वर्ष, एवं सेवा गतिविधियाँ यहां प्रस्तुत की जाएंगी। इस अनुभाग को आप आसानी से संपादित कर सकते हैं।</p>
-      <div class="row g-4 mt-2">
-        <div class="col-md-6">
-          <div class="card shadow-sm h-100">
+      <div class="row g-4 mt-1">
+        <div class="col-md-6" data-aos="fade-up">
+          <div class="card h-100 shadow-sm">
             <div class="card-body">
               <h5>गुरुजी का संदेश</h5>
-              <p>साधना, सेवा और संस्कार — यही हमारे जीवन का पथ है।</p>
+              <p class="mb-0">साधना, सेवा और संस्कार — यही हमारे जीवन का पथ है।</p>
             </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="card shadow-sm h-100">
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="card h-100 shadow-sm">
             <div class="card-body">
               <h5>ट्रस्ट सदस्य</h5>
               <ul class="mb-0">
@@ -68,57 +57,19 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="footer-gradient text-light mt-5">
-    <div class="container py-5">
-      <div class="row g-4">
-        <div class="col-md-4">
-          <h5 class="mb-3">आश्रम</h5>
-          <p>जय श्री बाबा सिद्धनाथ जी झरिना आश्रम — श्रद्धालुओं के लिए एक आध्यात्मिक केन्द्र।</p>
-          <div class="d-flex gap-2">
-            <a class="btn btn-sm btn-outline-light" href="downloads.html">धर्म ग्रंथ</a>
-            <a class="btn btn-sm btn-outline-light" href="events.html">आयोजन</a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <h5 class="mb-3">संपर्क</h5>
-          <p class="mb-1">झरिना, हरदोई, उत्तर प्रदेश</p>
-          <p class="mb-1">Email: info@sidhnathashram.org</p>
-          <p class="mb-0">WhatsApp: +91-90000-00000</p>
-        </div>
-        <div class="col-md-4">
-          <h5 class="mb-3">आज का मंत्र</h5>
-          <div id="footer-mantra" class="mantra-box"></div>
-        </div>
-      </div>
-      <hr class="border-light opacity-25 my-4">
-      <div class="d-flex justify-content-between small">
-        <span>© <span id="year"></span> Sidhnath Ashram. All Rights Reserved.</span>
-        <span>Made with श्रद्धा • जय श्री महादेव</span>
+      <div class="mt-5" data-aos="fade-up">
+        <a href="index.html" class="btn btn-bhagwa">Home पर जाएँ</a>
       </div>
     </div>
+  </main>
+
+  <footer class="footer text-center py-4">
+    <small>© <span id="year"></span> Sidhnath Ashram</small>
   </footer>
-
-  <!-- Daily Mantra Modal -->
-  <div class="modal fade" id="mantraModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header bg-bhagwa text-light">
-          <h5 class="modal-title">🔔 आज का मंत्र</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div id="modal-mantra" class="mantra-big text-center"></div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="assets/js/app.js"></script>
+  <script> AOS.init({once:true}); document.getElementById('year').textContent=new Date().getFullYear(); </script>
 </body>
 </html>
